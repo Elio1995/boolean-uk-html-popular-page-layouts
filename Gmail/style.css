@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template:
+    "header header header header" 30px
+    "inbox main settings nav-menu" 1fr
+    "chat main quick-settings nav-menu" 1fr/
+    1fr 2fr 1fr 50px;
+
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  border: solid 2px black;
+}
+
+.header {
+  grid-area: header;
+  background-color: rgb(160, 250, 253);
+}
+
+.inbox {
+  grid-area: inbox;
+  background-color: rgb(156, 190, 201);
+}
+
+.chat{
+  grid-area: chat;
+  background-color: rgb(156, 190, 201);
+}
+.main {
+  grid-area: main;
+  background-color: rgb(201, 201, 201);
+}
+
+.settings {
+  grid-area: settings;
+  background-color: rgb(156, 190, 201);
+}
+
+.quick-settings {
+  grid-area: quick-settings;
+  background-color: rgb(156, 190, 201);
+}
+.nav-menu {
+  border: solid 2pm black;
+  grid-area: nav-menu;
+  background-color: rgb(172, 172, 172);
+}
+
+@media screen and (max-width: 420px)
+{
+  .container {
+    display: grid;
+    grid-template:
+    "header header header" 30px
+    "inbox main settings" 1fr
+    "chat main quick-settings" 1fr/
+    1fr 2fr 1fr;
+  }  
+    .nav-menu {
+      display: none;
+    }
+}
+
+@media screen and (max-width: 300px)
+{
+  .container {
+    display: grid;
+    grid-template:
+    "header" 30px
+    "inbox" 1.2fr
+    "main" 2fr/
+     1fr ;
+  }
+    .settings {
+      display: none;
+    }
+    .quick-settings {
+      display: none;
+    }
+    .chat {
+      display: none;
+    }
+  }  
+    
+}
